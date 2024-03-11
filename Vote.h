@@ -8,10 +8,12 @@ NSString *getNormalizedDislikes(NSNumber *dislikeNumber, NSString *error);
 void getVoteFromVideoWithHandler(NSCache <NSString *, NSDictionary *> *cache, NSString *videoId, int retryCount, void (^handler)(NSDictionary *d, NSString *error));
 
 #define maxRetryCount 3
-#define FETCHING @"Fetching"
-#define FAILED @"Failed"
-// Emoji Versions
-// #define FETCHING @"⌛"
-//#define FAILED @"❌"
+#ifdef RYD_TEXT_FORMAT
+    #define FETCHING @"Fetching"
+    #define FAILED @"Failed"
+#else
+    #define FETCHING @"⌛"
+    #define FAILED @"❌"
+#endif
 
 #endif
