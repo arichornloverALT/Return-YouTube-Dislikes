@@ -8,12 +8,12 @@ NSString *getNormalizedDislikes(NSNumber *dislikeNumber, NSString *error);
 void getVoteFromVideoWithHandler(NSCache <NSString *, NSDictionary *> *cache, NSString *videoId, int retryCount, void (^handler)(NSDictionary *d, NSString *error));
 
 #define maxRetryCount 3
-#ifdef RYD_TEXT_FORMAT
+if ([[NSUserDefaults standardUserDefaults] boolForKey:TextFormatKey]) {
     #define FETCHING @"Fetching"
     #define FAILED @"Failed"
-#else
+} else {
     #define FETCHING @"⌛"
     #define FAILED @"❌"
-#endif
+}
 
 #endif
