@@ -16,6 +16,10 @@ BOOL ExactDislikeNumber() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:ExactDislikeKey];
 }
 
+BOOL TextFormat() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:TextFormatKey];
+}
+
 void enableVoteSubmission(BOOL enabled) {
     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:EnableVoteSubmissionKey];
 }
