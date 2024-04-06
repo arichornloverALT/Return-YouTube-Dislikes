@@ -7,6 +7,7 @@ BOOL TweakEnabled();
 BOOL VoteSubmissionEnabled();
 BOOL ExactLikeNumber();
 BOOL ExactDislikeNumber();
+BOOL TextFormat();
 
 void enableVoteSubmission(BOOL enabled);
 
@@ -14,5 +15,6 @@ void enableVoteSubmission(BOOL enabled);
 #define EnableVoteSubmissionKey @"RYD-VOTE-SUBMISSION"
 #define ExactLikeKey @"RYD-EXACT-LIKE-NUMBER"
 #define ExactDislikeKey @"RYD-EXACT-NUMBER"
+#define TextFormatKey @"RYD-TEXT-FORMAT"
 
 #endif
