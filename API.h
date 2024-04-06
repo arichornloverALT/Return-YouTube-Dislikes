@@ -2,7 +2,7 @@
 #define API_H_
 
 #import <Foundation/Foundation.h>
-#import <YouTubeHeader/YTLikeStatus.h>
+#import "../YouTubeHeader/YTLikeStatus.h"
 
 void fetch(
     NSString *endpoint,
