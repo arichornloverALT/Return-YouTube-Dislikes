@@ -1,7 +1,7 @@
-#import <YouTubeHeader/YTSettingsCell.h>
-#import <YouTubeHeader/YTSettingsSectionItem.h>
-#import <YouTubeHeader/YTSettingsSectionItemManager.h>
-#import <YouTubeHeader/YTSettingsViewController.h>
+#import "../YouTubeHeader/YTSettingsCell.h"
+#import "../YouTubeHeader/YTSettingsSectionItem.h"
+#import "../YouTubeHeader/YTSettingsSectionItemManager.h"
+#import "../YouTubeHeader/YTSettingsViewController.h"
 #import <rootless.h>
 #import "Settings.h"
 #import "TweakSettings.h"
