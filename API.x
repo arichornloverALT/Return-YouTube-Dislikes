@@ -1,5 +1,5 @@
 #import <CommonCrypto/CommonDigest.h>
-#import <YouTubeHeader/YTLikeStatus.h>
+#import "../YouTubeHeader/YTLikeStatus.h"
 #import <HBLog.h>
 #import "Settings.h"
 
