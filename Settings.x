@@ -85,6 +85,16 @@ NSBundle *RYDBundle() {
         }
         settingItemId:0];
     [sectionItems addObject:exactLike];
+    YTSettingsSectionItem *textFormat = [%c(YTSettingsSectionItem) switchItemWithTitle:LOC(@"TEXT_FORMAT")
+        titleDescription:nil
+        accessibilityIdentifier:nil
+        switchOn:TextFormat()
+        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:TextFormatKey];
+            return YES;
+        }
+        settingItemId:0];
+[sectionItems addObject:textFormat];
     if ([delegate respondsToSelector:@selector(setSectionItems:forCategory:title:icon:titleDescription:headerHidden:)])
         [delegate setSectionItems:sectionItems forCategory:RYDSection title:@(TWEAK_NAME) icon:nil titleDescription:nil headerHidden:NO];
     else
