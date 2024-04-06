@@ -12,8 +12,8 @@ if ([[NSUserDefaults standardUserDefaults] boolForKey:TextFormatKey]) {
     #define FETCHING @"Fetching"
     #define FAILED @"Failed"
 } else {
-    #define FETCHING @"⌛"
-    #define FAILED @"❌"
+    #define FETCHING2 @"⌛"
+    #define FAILED2 @"❌"
 }
 
 #endif
