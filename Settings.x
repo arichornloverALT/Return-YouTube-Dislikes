@@ -85,8 +85,8 @@ NSBundle *RYDBundle() {
         }
         settingItemId:0];
     [sectionItems addObject:exactLike];
-    YTSettingsSectionItem *textFormat = [%c(YTSettingsSectionItem) switchItemWithTitle:LOC(@"TEXT_FORMAT")
-        titleDescription:nil
+    YTSettingsSectionItem *textFormat = [%c(YTSettingsSectionItem) switchItemWithTitle:LOC(@"Replace Emojis with Text")
+        titleDescription:LOC(@"For Example: '⌛️' to 'Fetching'.")
         accessibilityIdentifier:nil
         switchOn:TextFormat()
         switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
