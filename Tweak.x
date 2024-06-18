@@ -413,10 +413,11 @@ extern NSBundle *RYDBundle();
             [alertView show];
         });
     }
-    NSString *frameworkPath = [NSString stringWithFormat:@"%@/Frameworks/Module_Framework.framework/Module_Framework", NSBundle.mainBundle.bundlePath];
-    NSBundle *bundle = [NSBundle bundleWithPath:frameworkPath];
-    if (!bundle.loaded) [bundle load];
-    MSImageRef ref = MSGetImageByName([frameworkPath UTF8String]);
+    NSString *bundlePath = [NSString stringWithFormat:@"%@/Frameworks/Module_Framework.framework/Module_Framework", NSBundle.mainBundle.bundlePath];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    if (bundle) [bundle load];
+    else bundlePath = NSBundle.mainBundle.executablePath;
+    MSImageRef ref = MSGetImageByName([bundlePath UTF8String]);
     ASNodeContextPush = (void (*)(ASNodeContext *))MSFindSymbol(ref, "_ASNodeContextPush");
     ASNodeContextPop = (void (*)(void))MSFindSymbol(ref, "_ASNodeContextPop");
     %init;
