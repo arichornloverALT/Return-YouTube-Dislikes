@@ -110,6 +110,16 @@ NSBundle *RYDBundle() {
         }
         settingItemId:0];
     [sectionItems addObject:rawData];
+    YTSettingsSectionItem *textFormat = [%c(YTSettingsSectionItem) switchItemWithTitle:LOC(@"Replace Emojis with Text")
+        titleDescription:LOC(@"For Example: '⌛️' to 'Fetching'.")
+        accessibilityIdentifier:nil
+        switchOn:TextFormat()
+        switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+            [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:TextFormatKey];
+            return YES;
+        }
+        settingItemId:0];
+    [sectionItems addObject:textFormat];
     if ([delegate respondsToSelector:@selector(setSectionItems:forCategory:title:icon:titleDescription:headerHidden:)]) {
         YTIIcon *icon = [%c(YTIIcon) new];
         icon.iconType = YT_DISLIKE;
